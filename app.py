@@ -138,7 +138,8 @@ if calc_cgpa == 'GPA':
     
     df['Grades'], df['Grade Index'] = grades, points
     if st.button('Calculate GPA'):
-        st.write(df)
+        st.spinner()
+        st.write('Your results:', df)
         df['Points'] = df['Units'] * df['Grade Index']
         total_unit = df['Units'].sum()
         user_total_point = df['Points'].sum()
@@ -193,6 +194,7 @@ else:
     
     df['Grades'], df['Grade Index'] = grades, points
     if st.button('Calculate CGPA'):
+        st.spinner()
         st.write('Your results:', df)
         df['Points'] = df['Units'] * df['Grade Index']
         total_unit = df['Units'].sum()
