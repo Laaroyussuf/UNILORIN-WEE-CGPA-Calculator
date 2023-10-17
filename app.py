@@ -137,19 +137,18 @@ if calc_cgpa == 'GPA':
         points.append(grade_equ[grade])
     
     df['Grades'], df['Grade Index'] = grades, points
-    with st.spinner():
-        if st.button('Calculate GPA'):
-            st.write('Your results:', df)
-            df['Points'] = df['Units'] * df['Grade Index']
-            total_unit = df['Units'].sum()
-            user_total_point = df['Points'].sum()
-            gpa = round((user_total_point / total_unit), 2)    
-            supposed_total_point = 5 * total_unit
-            
-            st.write(f'Total Unit: {total_unit}')
-            st.write(f'Total point: {user_total_point} out of {supposed_total_point}')
-            st.write(f'GPA: {gpa}')
-            class_rank(value = gpa)
+    if st.button('Calculate GPA'):
+        st.write(df)
+        df['Points'] = df['Units'] * df['Grade Index']
+        total_unit = df['Units'].sum()
+        user_total_point = df['Points'].sum()
+        gpa = round((user_total_point / total_unit), 2)    
+        supposed_total_point = 5 * total_unit
+        
+        st.write(f'Total Unit: {total_unit}')
+        st.write(f'Total point: {user_total_point} out of {supposed_total_point}')
+        st.write(f'GPA: {gpa}')
+        class_rank(value = gpa)
 
 else:
     list_course, units = [], []
@@ -193,16 +192,15 @@ else:
         points.append(grade_equ[grade])
     
     df['Grades'], df['Grade Index'] = grades, points
-    with st.spinner():
-        if st.button('Calculate CGPA'):
-            st.write('Your results:', df)
-            df['Points'] = df['Units'] * df['Grade Index']
-            total_unit = df['Units'].sum()
-            user_total_point = df['Points'].sum()
-            cgpa = round((user_total_point / total_unit), 2)
-            supposed_total_point = 5 * total_unit
-            
-            st.write(f'Total Unit: {total_unit}')
-            st.write(f'Total point: {user_total_point} out of {supposed_total_point}')
-            st.write(f'CGPA: {cgpa}')
-            class_rank(value = cgpa)
+    if st.button('Calculate CGPA'):
+        st.write('Your results:', df)
+        df['Points'] = df['Units'] * df['Grade Index']
+        total_unit = df['Units'].sum()
+        user_total_point = df['Points'].sum()
+        cgpa = round((user_total_point / total_unit), 2)
+        supposed_total_point = 5 * total_unit
+        
+        st.write(f'Total Unit: {total_unit}')
+        st.write(f'Total point: {user_total_point} out of {supposed_total_point}')
+        st.write(f'CGPA: {cgpa}')
+        class_rank(value = cgpa)
