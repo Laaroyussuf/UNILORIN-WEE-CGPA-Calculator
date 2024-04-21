@@ -116,7 +116,7 @@ def class_rank(value):
         return st.markdown('***You Fail.***')
 
 
-img_path = 'https://th.bing.com/th/id/OIP.UEO_1dj3Si4qae_MVqZTeQAAAA?rs=1&pid=ImgDetMain'
+img_path = 'https://th.bing.com/th/id/OIP.K4A7hVMjROf90a_PaIMsKAAAAA?rs=1&pid=ImgDetMain'
 st.sidebar.image(img_path, use_column_width=False)
 st.sidebar.title('WEE CGPA/GPA CALCULATOR')
 st.sidebar.markdown('Customise Your Calculator: ')
